@@ -4,12 +4,11 @@ import com.nani.learnrest.model.JobPost;
 import com.nani.learnrest.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class JobController {
 
     @Autowired
@@ -19,6 +18,12 @@ public class JobController {
 //    @ResponseBody
     public List<JobPost> getAll(){
         return jobService.getAll();
+    }
+
+    @PostMapping("/addJob")
+    public String addJobPost(@RequestBody JobPost jp){
+        jobService.addJob(jp);
+        return "Job Post added";
     }
 
 }
