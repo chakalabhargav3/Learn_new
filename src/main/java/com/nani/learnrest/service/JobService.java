@@ -21,4 +21,21 @@ public class JobService {
     public List<JobPost> getAll(){
             return jobrepo.getAll();
     }
-}
+
+
+    public void updateJob(JobPost jp) {
+
+        for(JobPost job : jobrepo.jobs){
+
+            if(job.getPostId() == jp.getPostId()){
+
+                job.setPostProfile(jp.getPostProfile());
+                job.setPostDesc(jp.getPostDesc());
+                job.setReqExperience(jp.getReqExperience());
+                job.setPostTechStack(jp.getPostTechStack());
+
+            }
+        }
+    }
+    }
+

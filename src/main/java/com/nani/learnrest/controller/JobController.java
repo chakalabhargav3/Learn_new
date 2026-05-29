@@ -14,7 +14,7 @@ public class JobController {
     @Autowired
     JobService jobService;
 
-    @RequestMapping("/getAll")
+    @GetMapping("/getAll")
 //    @ResponseBody
     public List<JobPost> getAll(){
         return jobService.getAll();
@@ -24,6 +24,12 @@ public class JobController {
     public String addJobPost(@RequestBody JobPost jp){
         jobService.addJob(jp);
         return "Job Post added";
+    }
+
+    @PutMapping("/updateJob")
+    public String updateJobPost(@RequestBody JobPost jp){
+        jobService.updateJob(jp);
+        return "Job Post updated";
     }
 
 }
