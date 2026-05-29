@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public class JobRepo {
 
-    List<JobPost> jobs = new ArrayList<>(Arrays.asList(
+   public List<JobPost> jobs = new ArrayList<>(Arrays.asList(
             new JobPost(1,"Java Developer","Must have good experience in core Java and Spring Boot",2,Arrays.asList("Java","Spring Boot","Hibernate","MySQL")),
             new JobPost(2,"Frontend Developer","Experience in building responsive web applications",1,Arrays.asList("HTML","CSS","JavaScript","Angular")),
             new JobPost(3,"Data Scientist","Strong background in machine learning and data analysis",3,Arrays.asList("Python","Machine Learning","SQL","TensorFlow")),
