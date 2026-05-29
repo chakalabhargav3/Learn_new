@@ -24,5 +24,11 @@ public class JobRepo {
     public void addJob(JobPost jobPost){
         jobs.add(jobPost);
     }
+
+
+    public void deleteJob(int postId){
+
+        jobs.removeIf(job -> job.getPostId() == postId);
+    }
 }
 

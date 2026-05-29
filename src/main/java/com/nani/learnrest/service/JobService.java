@@ -37,5 +37,12 @@ public class JobService {
             }
         }
     }
+
+    public void deleteJob(int postId){
+        jobrepo.deleteJob(postId);
+    }
+
+
+
     }
 
